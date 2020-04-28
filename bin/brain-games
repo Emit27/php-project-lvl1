@@ -1,1 +1,3 @@
 #!/usr/bin/env php
+<?php
+print_r("Привет Всем! \n");
