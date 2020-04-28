@@ -2,7 +2,7 @@
 
 namespace Games\BrainCalc;
 
-use function RunGame\startingGame;
+use function BrainGames\RunGame\startingGame as start;
 
 const MIN_RAND = 1;
 const MAX_RAND = 99;
@@ -32,6 +32,5 @@ function runs()
     $text = text();
     $operationResult = $operationResult;
     $operatExpression = "{$numberRandFirst} {$randoperator} {$numberRandSecond}";
-    startingGame($text, $operatExpression, $operationResult);
+    start($text, $operatExpression, $operationResult);
 }
-runs();

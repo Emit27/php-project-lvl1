@@ -10,7 +10,7 @@ const NUMBER_QUESTIONS = 3;
 function startText(string $text)
 {
     line("Welcome to the Brain Games!");
-    $text;
+    line($text);
 }
 
 function answer($correctAnswer, $userAnswer, $name)
