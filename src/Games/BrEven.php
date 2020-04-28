@@ -1,9 +1,8 @@
 <?php
 
-namespace BrainGames\Games\BrainEven;
+namespace Games\BrEven;
 
-use function Cli\line;
-use function BrainGames\RunGame\startingGame as start;
+use function RunGame\startingGame as start;
 
 const MIN_RAND = 1;
 const MAX_RAND = 99;
@@ -20,7 +19,7 @@ function checkAnswer($numb)
 
 function text()
 {
-    return line("Answer \"yes\" the number is even, otherwise answer \"no\". \n");
+    return "Answer \"yes\" the number is even, otherwise answer \"no\". \n";
 }
 
 function runs()
@@ -28,5 +27,5 @@ function runs()
     $createNum = rand(MIN_RAND, MAX_RAND);
     $correctAnswer = checkAnswer($createNum);
     $text = text();
-    start($text, $createNum, $correctAnswer);
+    return start($text, $createNum, $correctAnswer);
 }

@@ -11,14 +11,16 @@
         "MIT"
     ],
     "bin": [
-        "bin/brain-even"
+        "bin/even",
+        "bin/brain-calc"
     ],
     "scripts": {
         "phpcs": "phpcs"
     },
     "autoload": {
         "files": [
-            "src/Games/BrainEven.php"
+            "src/Games/BrEven.php",
+            "src/Games/BrCalc.php"
         ]
     },
     "require": {
