@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\BrainEven;
 
-use function BrainGames\RunGame\startingGame as start;
+use function BrainGames\RunGame\answer;
 use function Cli\line;
 
 const MIN_RAND = 1;
@@ -31,7 +31,8 @@ function runs()
         $correctAnswer = (string)checkAnswer($createNum);
         $text = (string)text();
         echo("rabot \n");
-        start($text, $createNum, $correctAnswer);
+        answer("5", "6", "8");
+        //start($text, $createNum, $correctAnswer);
     }
-    return line("Congratulations, %s!", \BrainGames\RunGame\userName());
+    //line("Congratulations, %s!", \BrainGames\RunGame\userName());
 }

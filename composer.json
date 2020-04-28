@@ -20,7 +20,8 @@
     "autoload": {
         "files": [
             "src/Games/BrainEven.php",
-            "src/Games/BrainCalc.php"
+            "src/Games/BrainCalc.php",
+            "src/RunGame.php"
         ]
     },
     "require": {
