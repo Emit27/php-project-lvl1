@@ -2,10 +2,8 @@
 
 namespace BrainGames\RunGame;
 
-use function Cli\Line;
-use function Cli\Prompt;
-
-const NUMBER_QUESTIONS = 3;
+use function Cli\line;
+use function Cli\prompt;
 
 function startText(string $text)
 {
@@ -31,15 +29,11 @@ function startingGame($text, $createNum, $correctAnswer)
 {
     startText($text);
     $name = userName();
-    for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
         line('Question: ' . $createNum);
         $userAnswer = prompt("Your answer");
-        if ($correctAnswer !== $userAnswer) {
-            answer($correctAnswer, $userAnswer, $name);
-            return;
-        }
-        line('Correct!');
+    if ($correctAnswer !== $userAnswer) {
+        answer($correctAnswer, $userAnswer, $name);
+        return;
     }
-    line("Congratulations, %s!", $name);
-    return;
+    return line('Correct!');
 }

@@ -11,6 +11,8 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
+echo("работаю \n");
+
 \BrainGames\Games\BrainEven\runs();
 
 
