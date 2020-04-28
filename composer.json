@@ -7,5 +7,8 @@
             "email": "emit580@gmail.com"
         }
     ],
+    "bin": [
+        "bin/brain-games"
+    ],
     "require": {}
 }
