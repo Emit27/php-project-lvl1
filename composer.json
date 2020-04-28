@@ -7,12 +7,15 @@
             "email": "emit580@gmail.com"
         }
     ],
-	 "license": [
+    "license": [
         "MIT"
     ],
     "bin": [
         "bin/brain-even"
     ],
+    "scripts": {
+        "phpcs": "phpcs"
+    },
     "autoload": {
         "files": [
             "src/Games/BrainEven.php"
