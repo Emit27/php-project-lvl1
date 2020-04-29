@@ -11,8 +11,8 @@
 
 # Определить четные числа
 
-[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/CDHwFpigDwXpVM9HwXw08nhQX)
+[![asciicast](https://media.proglib.io/wp-uploads/2018/07/asciinema.png)](https://asciinema.org/a/CDHwFpigDwXpVM9HwXw08nhQX)
 
 # "Калькулятор" - проверить свои математические способности
 
-[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/kIfxqLdvgeyr79E9D00SRjLrW)
+[![asciicast](https://media.proglib.io/wp-uploads/2018/07/asciinema.png)](https://asciinema.org/a/kIfxqLdvgeyr79E9D00SRjLrW)
