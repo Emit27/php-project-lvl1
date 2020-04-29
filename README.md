@@ -10,3 +10,5 @@
 «Mind Games» - набор из пяти консольных игр, построенный по принципу популярных мобильных приложений.
 
 # Определение четного числа
+
+[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/CDHwFpigDwXpVM9HwXw08nhQX)
