@@ -15,4 +15,4 @@
 
 # "Калькулятор" - проверить свои математические способности
 
-[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/nSBKuh5tDGT7BlflpzTNTLHxY)
+[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/kIfxqLdvgeyr79E9D00SRjLrW)
