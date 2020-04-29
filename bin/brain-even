@@ -10,9 +10,7 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-echo("работаю \n");
-
-use function BrainGames\Games\BrainEven\run;
+use function Braingames\Games\BrainEven\run;
 
 run();
 

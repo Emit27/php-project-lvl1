@@ -1,9 +1,9 @@
 <?php
 
-namespace Braingames\Games\Braineven;
+namespace Braingames\Games\BrainEven;
 
 use function Cli\line;
-use function Braingames\Rungame\startingGame as start;
+use function Braingames\RunGame\startingGame as start;
 
 const MIN_RAND = 1;
 const MAX_RAND = 99;

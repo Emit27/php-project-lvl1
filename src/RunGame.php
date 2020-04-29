@@ -1,6 +1,6 @@
 <?php
 
-namespace Braingames\Rungame;
+namespace Braingames\RunGame;
 
 use function Cli\Line;
 use function Cli\Prompt;
@@ -25,7 +25,7 @@ function userName()
     return $name;
 }
 
-function startingGame($userData)
+function startingGame(array $userData)
 {
     startText($userData[0]);
     $name = userName();
@@ -33,7 +33,7 @@ function startingGame($userData)
             [$createNum, $correctAnswer] = $userData[$i];
             line('Question: ' . $createNum);
             $userAnswer = prompt("Your answer");
-        if ($correctAnswer !== $userAnswer) {
+        if ((string)$correctAnswer !== $userAnswer) {
             return answer($correctAnswer, $userAnswer, $name);
         }
             line('Correct!');
