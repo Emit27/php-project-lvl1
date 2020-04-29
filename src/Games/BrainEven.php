@@ -1,9 +1,9 @@
 <?php
 
-namespace BrainGames\Games\BrainEven;
+namespace Braingames\Games\Braineven;
 
-use function BrainGames\RunGame\answer;
 use function Cli\line;
+use function Braingames\Rungame\startingGame as start;
 
 const MIN_RAND = 1;
 const MAX_RAND = 99;
@@ -24,15 +24,14 @@ function text()
     return "Answer \"yes\" the number is even, otherwise answer \"no\". \n";
 }
 
-function runs()
+function run()
 {
+    $userData = [];
+    $userData[] = text();
     for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
-        $createNum = (string)rand(MIN_RAND, MAX_RAND);
-        $correctAnswer = (string)checkAnswer($createNum);
-        $text = (string)text();
-        echo("rabot \n");
-        answer("5", "6", "8");
-        //start($text, $createNum, $correctAnswer);
+        $createNum = rand(MIN_RAND, MAX_RAND);
+        $correctAnswer = checkAnswer($createNum);
+        $userData[] = [$createNum, $correctAnswer];
     }
-    //line("Congratulations, %s!", \BrainGames\RunGame\userName());
+    start($userData);
 }

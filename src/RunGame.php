@@ -1,9 +1,9 @@
 <?php
 
-namespace BrainGames\RunGame;
+namespace Braingames\Rungame;
 
-use function Cli\line;
-use function Cli\prompt;
+use function Cli\Line;
+use function Cli\Prompt;
 
 function startText(string $text)
 {
@@ -25,15 +25,18 @@ function userName()
     return $name;
 }
 
-function startingGame($text, $createNum, $correctAnswer)
+function startingGame($userData)
 {
-    startText($text);
+    startText($userData[0]);
     $name = userName();
-        line('Question: ' . $createNum);
-        $userAnswer = prompt("Your answer");
-    if ($correctAnswer !== $userAnswer) {
-        answer($correctAnswer, $userAnswer, $name);
-        return;
+    for ($i = 1,$arrayValue = 3; $i <= $arrayValue; $i++) {
+            [$createNum, $correctAnswer] = $userData[$i];
+            line('Question: ' . $createNum);
+            $userAnswer = prompt("Your answer");
+        if ($correctAnswer !== $userAnswer) {
+            return answer($correctAnswer, $userAnswer, $name);
+        }
+            line('Correct!');
     }
-    return line('Correct!');
+    return line("Congratulations, %s!", $name);
 }
