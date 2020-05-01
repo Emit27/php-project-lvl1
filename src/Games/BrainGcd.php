@@ -1,6 +1,6 @@
 <?php
 
-namespace Braingames\Games\BrainCalc;
+namespace Braingames\Games\BrainGcd;
 
 use function Cli\line;
 use function Braingames\RunGame\startingGame as start;
@@ -11,7 +11,15 @@ const NUMBER_QUESTIONS = 3;
 
 function text()
 {
-    return "What is the result of the expression? \n";
+    return "Find the greatest common divisor of given numbers. \n";
+}
+
+function nodGcd($a, $b)
+{
+    if ($b == 0) {
+        return $a;
+    }
+    return nodGcd($b, $a % $b);
 }
 
 function run()
@@ -21,22 +29,9 @@ function run()
     for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
         $numberRandFirst = rand(MIN_RAND, MAX_RAND);
         $numberRandSecond = rand(MIN_RAND, MAX_RAND);
-        $operator = array('*','+','-');
-        $randoperator = $operator[rand(0, 2)];
-        switch ($randoperator) {
-            case '*':
-                $operationResult = $numberRandFirst * $numberRandSecond;
-                break;
-            case '+':
-                $operationResult = $numberRandFirst + $numberRandSecond;
-                break;
-            case '-':
-                $operationResult = $numberRandFirst - $numberRandSecond;
-                break;
-        }
-
-        $operatExpression = "{$numberRandFirst} {$randoperator} {$numberRandSecond}";
-        $userData[] = [$operatExpression, $operationResult];
+        $correctAnswer = nodGcd($numberRandFirst, $numberRandSecond);
+        $createNum = "{$numberRandFirst}  {$numberRandSecond}";
+        $userData[] = [$createNum, $correctAnswer];
     }
     start($userData);
 }
