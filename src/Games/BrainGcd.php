@@ -5,8 +5,8 @@ namespace Braingames\Games\BrainGcd;
 use function Cli\line;
 use function Braingames\RunGame\startingGame as start;
 
-const MIN_RAND = 1;
-const MAX_RAND = 50;
+const MIN_RAND = 10;
+const MAX_RAND = 90;
 const NUMBER_QUESTIONS = 3;
 
 function text()
