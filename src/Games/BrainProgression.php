@@ -2,7 +2,7 @@
 
 namespace Braingames\Games\BrainProgression;
 
-//use function Cli\line;
+use function Cli\line;
 use function Braingames\RunGame\startingGame as start;
 
 const MIN_RAND = 1;
