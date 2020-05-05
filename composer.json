@@ -17,7 +17,7 @@
         "bin/brain-progression"
     ],
     "scripts": {
-        "phpcs": "./vendor/squizlabs/php_codesniffer/bin/phpcs"
+        "phpcs": "phpcs"
     },
     "autoload": {
         "files": [
