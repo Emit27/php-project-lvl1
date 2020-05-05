@@ -20,3 +20,8 @@
 # "НОД" - определить наибольший общий делитель
 
 [![asciicast](https://media.proglib.io/wp-uploads/2018/07/asciinema.png)](https://asciinema.org/a/vxIkXtm3onCavFgHsHj8VPGGA)
+
+
+# "Арифметическая прогрессия" - угадать
+
+[![asciicast](https://media.proglib.io/wp-uploads/2018/07/asciinema.png)](https://asciinema.org/a/960Q26nnaq15GyKI5xLbAXuPw)
