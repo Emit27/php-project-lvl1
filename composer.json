@@ -14,7 +14,7 @@
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
-        "bin/brain-progression"
+        "bin/brain-progres"
     ],
     "scripts": {
         "phpcs": "phpcs"
@@ -24,7 +24,7 @@
             "src/Games/BrainEven.php",
             "src/Games/BrainCalc.php",
             "src/Games/BrainGcd.php",
-            "src/Games/BrainProgression",
+            "src/Games/BrainProgres.php",
             "src/RunGame.php"
         ]
     },
