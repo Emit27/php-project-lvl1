@@ -1,6 +1,6 @@
 <?php
 
-namespace Braingames\Games\BrainProgres;
+namespace Braingames\Games\BrainProgress;
 
 use function Braingames\RunGame\startingGame as start;
 
