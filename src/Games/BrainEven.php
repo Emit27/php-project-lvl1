@@ -8,14 +8,14 @@ const MIN_RAND = 1;
 const MAX_RAND = 99;
 const NUMBER_QUESTIONS = 3;
 
-function isEven(int $numb)
+function isEven(int $number)
 {
     return $numb % 2 === 0;
 }
 
-function checkAnswer($numb)
+function checkAnswer($number)
 {
-    return isEven($numb) ? 'yes' : 'no';
+    return isEven($number) ? 'yes' : 'no';
 }
 
 function transmitText()
