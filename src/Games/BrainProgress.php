@@ -11,7 +11,9 @@ const NUMBER_QUESTIONS = 3;
 
 function createProgression()
 {
-    $increment = rand(3, 8);
+    $beginStepProgression = 3;
+    $endStepProgression = 8;
+    $increment = rand($beginStepProgression, $endStepProgression);
     $startProgression = rand(MIN_RAND, MAX_RAND);
     do {
         $startProgression--;
@@ -22,9 +24,11 @@ function createProgression()
     for ($i = 1; $i < MAX_PROGRESSION_LENGHT; $i++) {
         $progressionNumbers[] = $startProgression = $startProgression + $increment;
     }
-    $ItemPosition = rand(1, 8);
-    $correctAnswer = $progressionNumbers[$ItemPosition];
-    $progressionNumbers[$ItemPosition] = '..';
+    $beginPosition = 1;
+    $endPosition = 8;
+    $numberPosition = rand($beginPosition, $endPosition);
+    $correctAnswer = $progressionNumbers[$numberPosition];
+    $progressionNumbers[$numberPosition] = '..';
     $progressionDisplay = implode(" ", $progressionNumbers);
     return [$progressionDisplay, $correctAnswer];
 }
