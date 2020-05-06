@@ -5,28 +5,35 @@ namespace Braingames\Games\BrainPrime;
 use function Braingames\RunGame\startingGame as start;
 
 const MIN_RAND = 1;
-const MAX_RAND = 99;
+const MAX_RAND = 100;
 const NUMBER_QUESTIONS = 3;
 
-function isEven(int $numb)
+function isPrime(int $number)
 {
-    return $numb % 2 === 0;
+    if ($number == 1) {
+        return false;
+    }
+    for ($divider = 2; $divider * $divider <= $number; $divider++) {
+        if ($number % $divider == 0) {
+            return false;
+        }
+    }
+    return true;
 }
 
-function checkAnswer($numb)
+function checkAnswer($number)
 {
-    return isEven($numb) ? 'yes' : 'no';
+    return isPrime($number) ? 'yes' : 'no';
+}
+function transmitText()
+{
+    return "Answer \"yes\" if given number is prime. Otherwise answer \"no\". \n";
 }
 
-function text()
-{
-    return "Answer \"yes\" the number is even, otherwise answer \"no\". \n";
-}
-
-function run()
+function runGames()
 {
     $userData = [];
-    $userData[] = text();
+    $userData[] = transmitText();
     for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
         $createNum = rand(MIN_RAND, MAX_RAND);
         $correctAnswer = checkAnswer($createNum);
