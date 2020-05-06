@@ -9,7 +9,7 @@ const MIN_RAND = 10;
 const MAX_RAND = 90;
 const NUMBER_QUESTIONS = 3;
 
-function text()
+function transmitText()
 {
     return "Find the greatest common divisor of given numbers. \n";
 }
@@ -22,10 +22,10 @@ function nodGcd($a, $b)
     return nodGcd($b, $a % $b);
 }
 
-function run()
+function runGames()
 {
     $userData = [];
-    $userData[] = text();
+    $userData[] = transmitText();
     for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
         $numberRandFirst = rand(MIN_RAND, MAX_RAND);
         $numberRandSecond = rand(MIN_RAND, MAX_RAND);

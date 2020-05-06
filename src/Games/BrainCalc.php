@@ -8,15 +8,15 @@ const MIN_RAND = 1;
 const MAX_RAND = 50;
 const NUMBER_QUESTIONS = 3;
 
-function text()
+function transmitText()
 {
     return "What is the result of the expression? \n";
 }
 
-function run()
+function runGames()
 {
     $userData = [];
-    $userData[] = text();
+    $userData[] = transmitText();
     for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
         $numberRandFirst = rand(MIN_RAND, MAX_RAND);
         $numberRandSecond = rand(MIN_RAND, MAX_RAND);

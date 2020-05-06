@@ -33,15 +33,15 @@ function createProgression()
     return [$progressionDisplay, $correctAnswer];
 }
 
-function text()
+function transmitText()
 {
     return "What number is missing in the progression? \n";
 }
 
-function run()
+function runGames()
 {
     $userData = [];
-    $userData[] = text();
+    $userData[] = transmitText();
     for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
         $userData[] = createProgression();
     }

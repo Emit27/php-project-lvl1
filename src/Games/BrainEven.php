@@ -18,15 +18,15 @@ function checkAnswer($numb)
     return isEven($numb) ? 'yes' : 'no';
 }
 
-function text()
+function transmitText()
 {
     return "Answer \"yes\" the number is even, otherwise answer \"no\". \n";
 }
 
-function run()
+function runGames()
 {
     $userData = [];
-    $userData[] = text();
+    $userData[] = transmitText();
     for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
         $createNum = rand(MIN_RAND, MAX_RAND);
         $correctAnswer = checkAnswer($createNum);
