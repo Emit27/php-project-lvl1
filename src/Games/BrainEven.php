@@ -10,7 +10,7 @@ const NUMBER_QUESTIONS = 3;
 
 function isEven(int $number)
 {
-    return $numb % 2 === 0;
+    return $number % 2 === 0;
 }
 
 function checkAnswer($number)
