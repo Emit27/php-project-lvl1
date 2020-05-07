@@ -7,7 +7,7 @@
 
 # Настроить
 
-composer global  require emit27/php-project-lvl1
+$ composer global  require emit27/php-project-lvl1
 
 
 # Описание проекта
