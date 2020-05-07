@@ -25,3 +25,12 @@
 # "Арифметическая прогрессия" - угадать
 
 [![asciicast](https://media.proglib.io/wp-uploads/2018/07/asciinema.png)](https://asciinema.org/a/qRDs9KeAqhnWLH1RV3FMkq99x)
+
+
+# Игра "Простое ли число"
+
+[![asciicast](https://media.proglib.io/wp-uploads/2018/07/asciinema.png)](https://asciinema.org/a/CBGaQtcoRm9rE7elfuglFWmeh)
+
+
+
+
