@@ -42,7 +42,7 @@ $ composer global  require emit27/php-project-lvl1
 
 # Игра "Простое ли число"
 
-Показываем игроку число нужно ответить если простое число то да, в ином случае нет
+Показываем игроку число нужно ответить если простое число то yes, в ином случае no
 
 [![asciicast](https://media.proglib.io/wp-uploads/2018/07/asciinema.png)](https://asciinema.org/a/CBGaQtcoRm9rE7elfuglFWmeh)
 
