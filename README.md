@@ -44,7 +44,7 @@ $ composer global  require emit27/php-project-lvl1
 
 Показываем игроку число нужно ответить если простое число то yes, в ином случае no
 
-[![asciicast](https://media.proglib.io/wp-uploads/2018/07/asciinema.png)](https://asciinema.org/a/CBGaQtcoRm9rE7elfuglFWmeh)
+[![asciicast](https://media.proglib.io/wp-uploads/2018/07/asciinema.png)](https://asciinema.org/a/CdMLceZFfKVynRoEu1Z7kXCro)
 
 
 
