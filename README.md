@@ -5,6 +5,11 @@
 [![Issue Count](https://codeclimate.com/github/Emit27/php-project-lvl1/badges/issue_count.svg)](https://codeclimate.com/github/Emit27/php-project-lvl1/issues)
 ![php-proekt-1](https://github.com/Emit27/php-project-lvl1/workflows/php-proekt-1/badge.svg)
 
+# Настроить
+
+composer global  require emit27/php-project-lvl1
+
+
 # Описание проекта
 
 «Mind Games» - набор из пяти консольных игр, построенный по принципу популярных мобильных приложений.
