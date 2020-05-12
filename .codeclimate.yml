@@ -1,9 +1,12 @@
-plugins:
-  brakeman:
+engines:
+  duplication:
     enabled: true
-  rubocop:
+    config:
+      languages:
+        - php
+  fixme:
     enabled: true
-  eslint:
+  phpmd:
     enabled: true
 
 exclude_patterns:
