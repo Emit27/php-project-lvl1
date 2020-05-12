@@ -8,29 +8,19 @@ const MIN_RAND = 1;
 const MAX_RAND = 99;
 const NUMBER_QUESTIONS = 3;
 
-function isEven(int $number)
+function isAnswerEven(int $number)
 {
-    return $number % 2 === 0;
-}
-
-function checkAnswer($number)
-{
-    return isEven($number) ? 'yes' : 'no';
-}
-
-function transmitText()
-{
-    return "Answer \"yes\" the number is even, otherwise answer \"no\". \n";
+     return ($number % 2 === 0) ? 'yes' : 'no';
 }
 
 function runGames()
 {
     $userData = [];
-    $userData[] = transmitText();
+    $texttoUser  = "Answer \"yes\" the number is even, otherwise answer \"no\". \n";
     for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
-        $createNum = rand(MIN_RAND, MAX_RAND);
-        $correctAnswer = checkAnswer($createNum);
-        $userData[] = [$createNum, $correctAnswer];
+        $randomNumber = rand(MIN_RAND, MAX_RAND);
+        $correctAnswer = isAnswerEven($randomNumber);
+        $userData[$i] = [$randomNumber, $correctAnswer];
     }
-    start($userData);
+    start($userData, $texttoUser);
 }

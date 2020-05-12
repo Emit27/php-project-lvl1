@@ -5,17 +5,7 @@ namespace Braingames\RunGame;
 use function Cli\Line;
 use function Cli\Prompt;
 
-function startText(string $text)
-{
-    line("Welcome to the Brain Games!");
-    line($text);
-}
-
-function answer($correctAnswer, $userAnswer, $name)
-{
-    line("'%s' is wrong answer! ;(. Correct answer was '%s'", $userAnswer, $correctAnswer);
-    line("Let's try again, %s!", $name);
-}
+const UNPACK_ARRAY = 3;
 
 function userName()
 {
@@ -25,13 +15,20 @@ function userName()
     return $name;
 }
 
-function startingGame(array $userData)
+function answer($correctAnswer, $userAnswer, $name)
 {
-    startText($userData[0]);
+    line("'%s' is wrong answer! ;(. Correct answer was '%s'", $userAnswer, $correctAnswer);
+    line("Let's try again, %s!", $name);
+}
+
+function startingGame(array $userData, $texttoUser = '')
+{
+    line("Welcome to the Brain Games!");
+    line($texttoUser);
     $name = userName();
-    for ($i = 1,$arrayValue = 3; $i <= $arrayValue; $i++) {
-            [$createNum, $correctAnswer] = $userData[$i];
-            line('Question: ' . $createNum);
+    for ($i = 1; $i <= UNPACK_ARRAY; $i++) {
+            [$randomNumber, $correctAnswer] = $userData[$i];
+            line('Question: ' . $randomNumber);
             $userAnswer = prompt("Your answer");
         if ((string)$correctAnswer !== $userAnswer) {
             return answer($correctAnswer, $userAnswer, $name);

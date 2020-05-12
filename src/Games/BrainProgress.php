@@ -9,7 +9,7 @@ const MAX_RAND = 200;
 const MAX_PROGRESSION_LENGHT = 10;
 const NUMBER_QUESTIONS = 3;
 
-function createProgression()
+function outputProgressionResponse()
 {
     $beginStepProgression = 3;
     $endStepProgression = 8;
@@ -33,17 +33,12 @@ function createProgression()
     return [$progressionDisplay, $correctAnswer];
 }
 
-function transmitText()
-{
-    return "What number is missing in the progression? \n";
-}
-
 function runGames()
 {
     $userData = [];
-    $userData[] = transmitText();
+    $texttoUser = "What number is missing in the progression? \n";
     for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
-        $userData[] = createProgression();
+        $userData[$i] = outputProgressionResponse();
     }
-    start($userData);
+    start($userData, $texttoUser);
 }

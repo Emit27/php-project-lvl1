@@ -25,19 +25,15 @@ function checkAnswer($number)
 {
     return isPrime($number) ? 'yes' : 'no';
 }
-function transmitText()
-{
-    return "Answer \"yes\" if given number is prime. Otherwise answer \"no\". \n";
-}
 
 function runGames()
 {
     $userData = [];
-    $userData[] = transmitText();
+    $texttoUser = "Answer \"yes\" if given number is prime. Otherwise answer \"no\". \n";
     for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
         $createNum = rand(MIN_RAND, MAX_RAND);
         $correctAnswer = checkAnswer($createNum);
-        $userData[] = [$createNum, $correctAnswer];
+        $userData[$i] = [$createNum, $correctAnswer];
     }
-    start($userData);
+    start($userData, $texttoUser);
 }
