@@ -9,11 +9,3 @@ engines:
   phpmd:
     enabled: true
 
-exclude_patterns:
-# examples of auto-generated exclusions
-- db/*
-- spec/*
-- tests/*
-- vendor/*
-- .vscode/*
-
