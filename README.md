@@ -1,7 +1,7 @@
 # Игры разма проект № 1
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/b3aae4e0e6f12f8f22f0ae20e5e9565a4375bcfe/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/b3aae4e0e6f12f8f22f0ae20e5e9565a4375bcfe/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+<a href="https://codeclimate.com/github/Emit27/php-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+<a href="https://codeclimate.com/github/Emit27/php-project-lvl1/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage" /></a>
 [![Issue Count](https://codeclimate.com/github/Emit27/php-project-lvl1/badges/issue_count.svg)](https://codeclimate.com/github/Emit27/php-project-lvl1/issues)
 ![php-proekt-1](https://github.com/Emit27/php-project-lvl1/workflows/php-proekt-1/badge.svg)
 
