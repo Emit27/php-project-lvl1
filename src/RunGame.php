@@ -1,11 +1,11 @@
 <?php
 
-namespace Braingames\RunGame;
+namespace BrainGames\RunGame;
 
 use function Cli\Line;
 use function Cli\Prompt;
 
-const UNPACK_ARRAY = 3;
+const QUESTIONS_COUNT = 3;
 
 function userName()
 {
@@ -21,19 +21,18 @@ function answer($correctAnswer, $userAnswer, $name)
     line("Let's try again, %s!", $name);
 }
 
-function startingGame(array $userData, $texttoUser = '')
+function startingGame(array $gameData, $gameDescription)
 {
     line("Welcome to the Brain Games!");
-    line($texttoUser);
+    line("{$gameDescription}\n");
     $name = userName();
-    for ($i = 1; $i <= UNPACK_ARRAY; $i++) {
-            [$randomNumber, $correctAnswer] = $userData[$i];
-            line('Question: ' . $randomNumber);
-            $userAnswer = prompt("Your answer");
-        if ((string)$correctAnswer !== $userAnswer) {
+    foreach ($gameData as [$questionUser, $correctAnswer]) {
+        line('Question: ' . $questionUser);
+        $userAnswer = prompt("Your answer");
+        if ((string) $correctAnswer !== $userAnswer) {
             return answer($correctAnswer, $userAnswer, $name);
         }
-            line('Correct!');
+        line('Correct!');
     }
-    return line("Congratulations, %s!", $name);
+    line("Congratulations, %s!", $name);
 }

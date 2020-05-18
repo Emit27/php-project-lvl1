@@ -1,26 +1,27 @@
 <?php
 
-namespace Braingames\Games\BrainEven;
+namespace BrainGames\Games\BrainEven;
 
-use function Braingames\RunGame\startingGame as start;
+use function BrainGames\RunGame\startingGame as start;
+
+use const BrainGames\RunGame\QUESTIONS_COUNT;
 
 const MIN_RAND = 1;
 const MAX_RAND = 99;
-const NUMBER_QUESTIONS = 3;
 
-function isAnswerEven(int $number)
+function isEven(int $number)
 {
-     return ($number % 2 === 0) ? 'yes' : 'no';
+    return $number % 2 === 0;
 }
 
 function runGames()
 {
-    $userData = [];
-    $texttoUser  = "Answer \"yes\" the number is even, otherwise answer \"no\". \n";
-    for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
+    $gameDescription = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    $gameData = [];
+    for ($i = 0; $i < QUESTIONS_COUNT; $i++) {
         $randomNumber = rand(MIN_RAND, MAX_RAND);
-        $correctAnswer = isAnswerEven($randomNumber);
-        $userData[$i] = [$randomNumber, $correctAnswer];
+        $correctAnswer = isEven($randomNumber) ? 'yes' : 'no';
+        $gameData[] = [$randomNumber, $correctAnswer];
     }
-    start($userData, $texttoUser);
+    start($gameData, $gameDescription);
 }

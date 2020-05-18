@@ -1,12 +1,13 @@
 <?php
 
-namespace Braingames\Games\BrainPrime;
+namespace BrainGames\Games\BrainPrime;
 
-use function Braingames\RunGame\startingGame as start;
+use function BrainGames\RunGame\startingGame as start;
+
+use const BrainGames\RunGame\QUESTIONS_COUNT;
 
 const MIN_RAND = 1;
 const MAX_RAND = 100;
-const NUMBER_QUESTIONS = 3;
 
 function isPrime(int $number)
 {
@@ -21,19 +22,14 @@ function isPrime(int $number)
     return true;
 }
 
-function checkAnswer($number)
-{
-    return isPrime($number) ? 'yes' : 'no';
-}
-
 function runGames()
 {
-    $userData = [];
-    $texttoUser = "Answer \"yes\" if given number is prime. Otherwise answer \"no\". \n";
-    for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
+    $gameData = [];
+    $gameDescription = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    for ($i = 0; $i < QUESTIONS_COUNT; $i++) {
         $createNum = rand(MIN_RAND, MAX_RAND);
-        $correctAnswer = checkAnswer($createNum);
-        $userData[$i] = [$createNum, $correctAnswer];
+        $correctAnswer = isPrime($createNum) ? 'yes' : 'no';
+        $gameData[] = [$createNum, $correctAnswer];
     }
-    start($userData, $texttoUser);
+    start($gameData, $gameDescription);
 }

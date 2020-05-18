@@ -1,44 +1,44 @@
 <?php
 
-namespace Braingames\Games\BrainProgress;
+namespace BrainGames\Games\BrainProgress;
 
-use function Braingames\RunGame\startingGame as start;
+use function BrainGames\RunGame\startingGame as start;
+
+use const BrainGames\RunGame\QUESTIONS_COUNT;
 
 const MIN_RAND = 1;
 const MAX_RAND = 200;
 const MAX_PROGRESSION_LENGHT = 10;
-const NUMBER_QUESTIONS = 3;
 
-function outputProgressionResponse()
+function passProgressionResponse()
 {
     $beginStepProgression = 3;
     $endStepProgression = 8;
-    $increment = rand($beginStepProgression, $endStepProgression);
-    $startProgression = rand(MIN_RAND, MAX_RAND);
-    do {
-        $startProgression--;
-        $endofProgression = $startProgression + ($increment * 9);
-    } while ($endofProgression > MAX_RAND);
-    $progressionNumbers = [];
-    $progressionNumbers[] = $startProgression;
-    for ($i = 1; $i < MAX_PROGRESSION_LENGHT; $i++) {
-        $progressionNumbers[] = $startProgression = $startProgression + $increment;
+    $step = rand($beginStepProgression, $endStepProgression);
+    $startofProgression = rand(MIN_RAND, MAX_RAND);
+    $progressionPosition = [];
+    $progressionPosition = createProgression($startofProgression, $step);
+    $numberPosition = array_rand($progressionPosition);
+    $correctAnswer = $progressionPosition[$numberPosition];
+    $progressionPosition[$numberPosition] = '..';
+    $outputProgression = implode(" ", $progressionPosition);
+    return [$outputProgression, $correctAnswer];
+}
+
+function createProgression($startofProgression, $step)
+{
+    for ($i = 0; $i < MAX_PROGRESSION_LENGHT; $i++) {
+        $progression[] = $startofProgression + $step * $i;
     }
-    $beginPosition = 1;
-    $endPosition = 8;
-    $numberPosition = rand($beginPosition, $endPosition);
-    $correctAnswer = $progressionNumbers[$numberPosition];
-    $progressionNumbers[$numberPosition] = '..';
-    $progressionDisplay = implode(" ", $progressionNumbers);
-    return [$progressionDisplay, $correctAnswer];
+    return  $progression;
 }
 
 function runGames()
 {
-    $userData = [];
-    $texttoUser = "What number is missing in the progression? \n";
-    for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
-        $userData[$i] = outputProgressionResponse();
+    $gameDescription = "What number is missing in the progression?";
+    $gameData = [];
+    for ($i = 0; $i < QUESTIONS_COUNT; $i++) {
+        $gameData[] = passProgressionResponse();
     }
-    start($userData, $texttoUser);
+    start($gameData, $gameDescription);
 }

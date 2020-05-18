@@ -1,36 +1,37 @@
 <?php
 
-namespace Braingames\Games\BrainCalc;
+namespace BrainGames\Games\BrainCalc;
 
-use function Braingames\RunGame\startingGame as start;
+use function BrainGames\RunGame\startingGame as start;
+
+use const BrainGames\RunGame\QUESTIONS_COUNT;
 
 const MIN_RAND = 1;
 const MAX_RAND = 50;
-const NUMBER_QUESTIONS = 3;
 const ARRAY_OPERATION_SELECTION = 2;
 
 function runGames()
 {
-    $userData = [];
-    $texttoUser = "What is the result of the expression? \n";
-    for ($i = 1; $i <= NUMBER_QUESTIONS; $i++) {
+    $gameDescription = "What is the result of the expression?";
+    $gameData = [];
+    for ($i = 0; $i < QUESTIONS_COUNT; $i++) {
         $numberRandFirst = rand(MIN_RAND, MAX_RAND);
         $numberRandSecond = rand(MIN_RAND, MAX_RAND);
-        $operator = array('*','+','-');
-        $randoperator = $operator[rand(0, ARRAY_OPERATION_SELECTION)];
-        switch ($randoperator) {
+        $operations = array('*','+','-');
+        $operation = $operations[rand(0, ARRAY_OPERATION_SELECTION)];
+        switch ($operation) {
             case '*':
-                $operationResult = $numberRandFirst * $numberRandSecond;
+                $result = $numberRandFirst * $numberRandSecond;
                 break;
             case '+':
-                $operationResult = $numberRandFirst + $numberRandSecond;
+                $result = $numberRandFirst + $numberRandSecond;
                 break;
             case '-':
-                $operationResult = $numberRandFirst - $numberRandSecond;
+                $result = $numberRandFirst - $numberRandSecond;
                 break;
         }
-        $operatExpression = "{$numberRandFirst} {$randoperator} {$numberRandSecond}";
-        $userData[$i] = [$operatExpression, $operationResult];
+        $question = "{$numberRandFirst} {$operation} {$numberRandSecond}";
+        $gameData[] = [$question, $result];
     }
-    start($userData, $texttoUser);
+    start($gameData, $gameDescription);
 }
