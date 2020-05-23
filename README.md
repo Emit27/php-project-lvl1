@@ -8,6 +8,14 @@
 
 $ composer global  require emit27/php-project-lvl1
 
+# Команды для запуска игр
+
+- brain-calc
+- brain-even
+- brain-gcd
+- brain-prime
+- brain-progress
+
 
 # Описание проекта
 
