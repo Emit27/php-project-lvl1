@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\RunGame;
+namespace BrainGames\GameEngine;
 
 use function Cli\Line;
 use function Cli\Prompt;
@@ -21,7 +21,7 @@ function answer($correctAnswer, $userAnswer, $name)
     line("Let's try again, %s!", $name);
 }
 
-function startingGame(array $gameData, $gameDescription)
+function engineGameLaunch(array $gameData, $gameDescription)
 {
     line("Welcome to the Brain Games!");
     line("{$gameDescription}\n");

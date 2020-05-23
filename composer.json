@@ -22,12 +22,12 @@
     },
     "autoload": {
         "files": [
-            "src/Games/BrainEven.php",
-            "src/Games/BrainCalc.php",
-            "src/Games/BrainGcd.php",
-            "src/Games/BrainProgress.php",
-            "src/Games/BrainPrime.php",
-            "src/RunGame.php"
+            "src/Games/Even.php",
+            "src/Games/Calc.php",
+            "src/Games/Gcd.php",
+            "src/Games/Progress.php",
+            "src/Games/Prime.php",
+            "src/GameEngine.php"
         ]
     },
     "require": {

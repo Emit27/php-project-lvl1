@@ -1,16 +1,16 @@
 <?php
 
-namespace BrainGames\Games\BrainCalc;
+namespace BrainGames\Games\Calc;
 
-use function BrainGames\RunGame\startingGame as start;
+use function BrainGames\GameEngine\engineGameLaunch as start;
 
-use const BrainGames\RunGame\QUESTIONS_COUNT;
+use const BrainGames\GameEngine\QUESTIONS_COUNT;
 
 const MIN_RAND = 1;
 const MAX_RAND = 50;
 const ARRAY_OPERATION_SELECTION = 2;
 
-function runGames()
+function runGameBrainCalc()
 {
     $gameDescription = "What is the result of the expression?";
     $gameData = [];
