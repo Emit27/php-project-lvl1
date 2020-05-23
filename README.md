@@ -1,4 +1,4 @@
-# Игры разма проект № 1
+# Игры разума проект № 1
 
 <a href="https://codeclimate.com/github/Emit27/php-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 [![Issue Count](https://codeclimate.com/github/Emit27/php-project-lvl1/badges/issue_count.svg)](https://codeclimate.com/github/Emit27/php-project-lvl1/issues)
