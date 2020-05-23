@@ -27,9 +27,9 @@ function runGameBrainPrime()
     $gameData = [];
     $gameDescription = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     for ($i = 0; $i < QUESTIONS_COUNT; $i++) {
-        $createNum = rand(MIN_RAND, MAX_RAND);
-        $correctAnswer = isPrime($createNum) ? 'yes' : 'no';
-        $gameData[] = [$createNum, $correctAnswer];
+        $primeNumber = rand(MIN_RAND, MAX_RAND);
+        $correctAnswer = isPrime($primeNumber) ? 'yes' : 'no';
+        $gameData[] = [$primeNumber, $correctAnswer];
     }
     start($gameData, $gameDescription);
 }

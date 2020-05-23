@@ -7,32 +7,23 @@ use function Cli\Prompt;
 
 const QUESTIONS_COUNT = 3;
 
-function userName()
-{
-    $name = prompt('May I have your name? ', false, null);
-    line("Hello, %s!", $name);
-    line('');
-    return $name;
-}
-
-function answer($correctAnswer, $userAnswer, $name)
-{
-    line("'%s' is wrong answer! ;(. Correct answer was '%s'", $userAnswer, $correctAnswer);
-    line("Let's try again, %s!", $name);
-}
-
 function engineGameLaunch(array $gameData, $gameDescription)
 {
-    line("Welcome to the Brain Games!");
+    line('Welcome to the Brain Games!');
     line("{$gameDescription}\n");
-    $name = userName();
-    foreach ($gameData as [$questionUser, $correctAnswer]) {
-        line('Question: ' . $questionUser);
+    $playerName = prompt('May I have your name? ');
+    line("Hello, {$playerName}!\n");
+
+    foreach ($gameData as [$question, $correctAnswer]) {
+        line("Question: {$question}");
         $userAnswer = prompt("Your answer");
-        if ((string) $correctAnswer !== $userAnswer) {
-            return answer($correctAnswer, $userAnswer, $name);
+        if ((string) $correctAnswer === $userAnswer) {
+            line("Correct!\n");
+        } else {
+            line("{$userAnswer} is wrong answer! ;(. Correct answer was {$correctAnswer}");
+            line("Let's try again, {$playerName}!\n");
+            exit;
         }
-        line('Correct!');
     }
-    line("Congratulations, %s!", $name);
+    line("Congratulations, {$playerName}");
 }
