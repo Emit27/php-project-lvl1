@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Prime;
 
-use function BrainGames\GameEngine\engineGameLaunch as start;
+use function BrainGames\GameEngine\engineGameLaunch as play;
 
 use const BrainGames\GameEngine\QUESTIONS_COUNT;
 
@@ -27,9 +27,9 @@ function runGameBrainPrime()
     $gameData = [];
     $gameDescription = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     for ($i = 0; $i < QUESTIONS_COUNT; $i++) {
-        $primeNumber = rand(MIN_RAND, MAX_RAND);
-        $correctAnswer = isPrime($primeNumber) ? 'yes' : 'no';
-        $gameData[] = [$primeNumber, $correctAnswer];
+        $rangeOfNumbers = rand(MIN_RAND, MAX_RAND);
+        $correctAnswer = isPrime($rangeOfNumbers) ? 'yes' : 'no';
+        $gameData[] = [$rangeOfNumbers, $correctAnswer];
     }
-    start($gameData, $gameDescription);
+    play($gameData, $gameDescription);
 }

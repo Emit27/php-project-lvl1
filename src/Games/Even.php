@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Even;
 
-use function BrainGames\GameEngine\engineGameLaunch as start;
+use function BrainGames\GameEngine\engineGameLaunch as play;
 
 use const BrainGames\GameEngine\QUESTIONS_COUNT;
 
@@ -23,5 +23,5 @@ function runGameBrainEven()
         $correctAnswer = isEven($questionGame) ? 'yes' : 'no';
         $gameData[] = [$questionGame, $correctAnswer];
     }
-    start($gameData, $gameDescription);
+    play($gameData, $gameDescription);
 }

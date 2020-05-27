@@ -13,7 +13,6 @@ function engineGameLaunch(array $gameData, $gameDescription)
     line("{$gameDescription}\n");
     $playerName = prompt('May I have your name? ');
     line("Hello, {$playerName}!\n");
-
     foreach ($gameData as [$question, $correctAnswer]) {
         line("Question: {$question}");
         $userAnswer = prompt("Your answer");
@@ -22,7 +21,7 @@ function engineGameLaunch(array $gameData, $gameDescription)
         } else {
             line("{$userAnswer} is wrong answer! ;(. Correct answer was {$correctAnswer}");
             line("Let's try again, {$playerName}!\n");
-            exit;
+            return;
         }
     }
     line("Congratulations, {$playerName}");

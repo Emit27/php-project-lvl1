@@ -2,19 +2,19 @@
 
 namespace BrainGames\Games\Gcd;
 
-use function BrainGames\GameEngine\engineGameLaunch as start;
+use function BrainGames\GameEngine\engineGameLaunch as play;
 
 use const BrainGames\GameEngine\QUESTIONS_COUNT;
 
 const MIN_RAND = 10;
 const MAX_RAND = 90;
 
-function calculateDivisorGcd($a, $b)
+function calculateGcd($a, $b)
 {
     if ($b == 0) {
         return $a;
     }
-    return calculateDivisorGcd($b, $a % $b);
+    return calculateGcd($b, $a % $b);
 }
 
 function runGameBrainGcd()
@@ -28,5 +28,5 @@ function runGameBrainGcd()
         $question = "{$numberRandFirst} {$numberRandSecond}";
         $gameData[] = [$question, $correctAnswer];
     }
-    start($gameData, $gameDescription);
+    play($gameData, $gameDescription);
 }

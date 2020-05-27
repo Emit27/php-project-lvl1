@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Progress;
 
-use function BrainGames\GameEngine\engineGameLaunch as start;
+use function BrainGames\GameEngine\engineGameLaunch as play;
 
 use const BrainGames\GameEngine\QUESTIONS_COUNT;
 
@@ -10,7 +10,7 @@ const MIN_RAND = 1;
 const MAX_RAND = 200;
 const MAX_PROGRESSION_LENGHT = 10;
 
-function passProgressionResponse()
+function outputProgressionСorrectAnswer()
 {
     $beginStepProgression = 3;
     $endStepProgression = 8;
@@ -18,9 +18,9 @@ function passProgressionResponse()
     $startOfProgression = rand(MIN_RAND, MAX_RAND);
     $progression = [];
     $progression = createProgression($startOfProgression, $step);
-    $hiddenElementProgress = array_rand($progression);
-    $correctAnswer = $progression[$hiddenElementProgress];
-    $progression[$hiddenElementProgress] = '..';
+    $progressItemAddress = array_rand($progression);
+    $correctAnswer = $progression[$progressItemAddress];
+    $progression[$progressItemAddress] = '..';
     $questionGame = implode(" ", $progression);
     return [$questionGame, $correctAnswer];
 }
@@ -38,7 +38,7 @@ function runGameBrainProgression()
     $gameDescription = "What number is missing in the progression?";
     $gameData = [];
     for ($i = 0; $i < QUESTIONS_COUNT; $i++) {
-        $gameData[] = passProgressionResponse();
+        $gameData[] = outputProgressionСorrectAnswer();
     }
-    start($gameData, $gameDescription);
+    play($gameData, $gameDescription);
 }
