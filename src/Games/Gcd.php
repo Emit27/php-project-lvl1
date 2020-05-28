@@ -24,7 +24,7 @@ function runGameBrainGcd()
     for ($i = 0; $i < QUESTIONS_COUNT; $i++) {
         $numberRandFirst = rand(MIN_RAND, MAX_RAND);
         $numberRandSecond = rand(MIN_RAND, MAX_RAND);
-        $correctAnswer = calculateDivisorGcd($numberRandFirst, $numberRandSecond);
+        $correctAnswer = calculateGcd($numberRandFirst, $numberRandSecond);
         $question = "{$numberRandFirst} {$numberRandSecond}";
         $gameData[] = [$question, $correctAnswer];
     }
